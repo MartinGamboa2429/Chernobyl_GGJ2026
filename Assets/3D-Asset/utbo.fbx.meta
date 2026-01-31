@@ -1,19 +1,14 @@
 fileFormatVersion: 2
-guid: 98ed855237c991d4381c3be219b2bbca
+guid: 59ec01b6c9695474ab7cb091ac363304
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Item_Barril_1_Obj_baseMat
-    second: {fileID: 2100000, guid: 752c6298da694f648b746e1c934d073e, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
