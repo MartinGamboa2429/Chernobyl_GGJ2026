@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.00764
+      value: 13.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000002172204
+      value: 0.0000021457672
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.287556
+      value: 4.58
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
       propertyPath: m_LocalRotation.x
@@ -30,11 +30,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -52,8 +52,59 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_Tubo_3
       objectReference: {fileID: 0}
+    - target: {fileID: 7250684555784845800, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
+      propertyPath: m_TagString
+      value: Contaminated
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7250684555784845800, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 11281653133439320}
+    - targetCorrespondingSourceObject: {fileID: 7250684555784845800, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1875024631738865576}
   m_SourcePrefab: {fileID: 100100000, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
+--- !u!1 &2465704823851935516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7250684555784845800, guid: de18bd9ac15d2d048b1d490afef52d7a, type: 3}
+  m_PrefabInstance: {fileID: 5091436241570635508}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &11281653133439320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465704823851935516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308427ead13b2c6d69f3614217f1a4a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ContaminatedBox
+  _contaminationAmount: 100
+  _hitBox: {fileID: 1875024631738865576}
+  _init: 0
+--- !u!65 &1875024631738865576
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465704823851935516}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8486475, y: 2.2412271, z: 6.9481792}
+  m_Center: {x: -2.9123101, y: 1.1319475, z: 0}
