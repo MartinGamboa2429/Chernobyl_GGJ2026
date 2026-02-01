@@ -50,6 +50,7 @@ public class Interactor : MonoBehaviour
     public void ChangeSuit(int suit)
     {
         _suit = suit;
+        Debug.Log($"Traje cambiado a "+suit);
     }
 }
 
