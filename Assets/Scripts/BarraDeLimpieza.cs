@@ -14,41 +14,43 @@ public class BarraDeLimpieza : MonoBehaviour
 
     void UpdateColor(){
 
-	float valor = barraFill.fillAmount; 
+		float valor = barraFill.fillAmount; 
 
-	if ( valor > 0.66f) 
-	{
-		barraFill.color = Color.red;
-	}
-	else if (valor > 0.33f)
-	{
-		barraFill.color = Color.orange;
-	}
-	else {
-		barraFill.color = Color.green;
-	}
+		if ( valor > 0.66f) 
+		{
+			barraFill.color = Color.red;
+		}
+		else if (valor > 0.33f)
+		{
+			barraFill.color = Color.orange;
+		}
+		else {
+			barraFill.color = Color.green;
+		}
 
-}
+	}
+	public void SetMaxFill(float maxFill)
+	{
+		barraFill.fillAmount = maxFill;
+	}
 
     public void AddClean(){
 	
       if(barraFill.fillAmount < 1) 
-	{ 
-	  barraFill.fillAmount += 0.1f;
-	  UpdateColor();   
-	}
-      
+		{ 
+			barraFill.fillAmount += 0.1f;
+			UpdateColor();   
+		}
     }
 
-    public void RemoveClean(){
+    public void RemoveClean(float amount){
 		Debug.Log("BOTON APRETADO");
-	if(barraFill.fillAmount > 0) 
+		if(barraFill.fillAmount > 0) 
         { 
-		barraFill.fillAmount -= 0.1f;
-		barraFill.fillAmount = Mathf.Clamp01(barraFill.fillAmount);
-		UpdateColor();
-    }
-
-
- }
+			//barraFill.fillAmount -= 0.1f;
+			barraFill.fillAmount -= amount;
+			barraFill.fillAmount = Mathf.Clamp01(barraFill.fillAmount);
+			UpdateColor();
+    	}
+ 	}
 }

@@ -12,10 +12,14 @@ public class ContaminatedBox : MonoBehaviour, IInteractable
     [SerializeField] private float _contaminationAmount;
     [SerializeField] Collider _hitBox;
     [SerializeField] private int _init = 0;
+
+    [SerializeField] BarraDeLimpieza _barra;
     private float _interactorPower = 0;
     private State _currentState;
     private bool cleanned = false;
     private int _interactorSuit = -1;
+
+
 
     public float GetInteractorPower()
     {
@@ -25,6 +29,11 @@ public class ContaminatedBox : MonoBehaviour, IInteractable
     {
         return _interactorSuit;
     }
+    public BarraDeLimpieza GetBarra()
+    {
+        return _barra;
+    }
+    
     void Start()
     {
         if(_init == 0){_currentState = new ContaminatedState(_contaminationAmount,_hitBox, this);}
