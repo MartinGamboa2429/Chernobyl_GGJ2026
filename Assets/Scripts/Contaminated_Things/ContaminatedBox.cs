@@ -28,7 +28,7 @@ public class ContaminatedBox : MonoBehaviour, IInteractable
     void Start()
     {
         if(_init == 0){_currentState = new ContaminatedState(_contaminationAmount,_hitBox, this);}
-        else if (_init == 1) {_currentState = new ContaminatedState(_contaminationAmount,_hitBox, this);}
+        else if (_init == 1) {_currentState = new BurningState(_contaminationAmount,_hitBox, this);}
         
     }
     public void SetState(State state)
@@ -43,7 +43,7 @@ public class ContaminatedBox : MonoBehaviour, IInteractable
         {
             _interactorPower = interactor.GetPower();
         }
-        _contaminationAmount -= _interactorPower;
+        //_contaminationAmount -= _interactorPower;
         _currentState.Interact();
         
     }
