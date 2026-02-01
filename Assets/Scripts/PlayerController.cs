@@ -6,10 +6,20 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float _speed = 5;
     [SerializeField] private float _turnSpeed = 360;
     private Vector3 _input;
+    [SerializeField] private GameObject _acivationBox;
 
     private void Update() {
         GatherInput();
         Look();
+        if (Input.GetMouseButton(0))
+        {
+            _acivationBox.SetActive(true);
+            //Debug.Log("Deberia Prenderse");
+        }
+        else
+        {
+            _acivationBox.SetActive(false);
+        }
     }
 
     private void FixedUpdate() {

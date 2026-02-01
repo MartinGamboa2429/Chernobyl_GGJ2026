@@ -21,8 +21,10 @@ public class ContaminatedState : State
             _interactorPower = _context.GetInteractorPower();
         }
         _contaminationAmount -= _interactorPower;
+        Debug.Log($"SE ESTA LIMPIANDO! QUEDA " +_contaminationAmount);
         if (_contaminationAmount <= 0)
         {
+            Debug.Log($"SE Limpió ");
             _context.ChangeState();
         }
         

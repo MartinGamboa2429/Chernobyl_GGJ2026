@@ -26,6 +26,16 @@ public class Interactor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if (Input.GetMouseButton(0))
+        // {
+        //     _acivationBox.SetActive(true);
+        //     //Debug.Log("Deberia Prenderse");
+        // }
+        // else
+        // {
+        //     _acivationBox.SetActive(false);
+        // } 
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             ChangeSuit(0);
@@ -37,6 +47,7 @@ public class Interactor : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log("Interactor Interact ");
         if (other.gameObject.CompareTag("Contaminated"))
         {
             if (other.TryGetComponent(out IInteractable iteractableObj))

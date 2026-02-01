@@ -37,6 +37,7 @@ public class ContaminatedBox : MonoBehaviour, IInteractable
     }
     public void Interact(Interactor interactor)
     {
+        Debug.Log("BOX INTERACT");
         if (cleanned) return;
         if (_interactorPower == 0)
         {
