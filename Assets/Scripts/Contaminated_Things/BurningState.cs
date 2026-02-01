@@ -6,11 +6,14 @@ public class BurningState : State
     private Collider _hitBox;
     private float _interactorPower = 0;
     private ContaminatedBox _context;
+    private BarraDeLimpieza _barra;
     public BurningState(float amount, Collider hitbox, ContaminatedBox context) 
     {
         _contaminationAmount = amount;
         _hitBox = hitbox;
         _context = context;
+        _barra = _context.GetBarra();
+        _barra.SetMaxFill(_contaminationAmount);
     }
 
     public override void Interact()
@@ -21,6 +24,7 @@ public class BurningState : State
             _interactorPower = _context.GetInteractorPower();
         }
         _contaminationAmount -= _interactorPower;
+        _barra.RemoveClean(_interactorPower);
         if (_contaminationAmount <= 0)
         {
             ChangeState();

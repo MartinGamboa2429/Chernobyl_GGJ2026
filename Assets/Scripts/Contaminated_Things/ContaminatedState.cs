@@ -29,6 +29,7 @@ public class ContaminatedState : State
         if (_contaminationAmount <= 0)
         {
             Debug.Log($"SE Limpió ");
+            GameManager.Instance.SumarValor(1f);
             _context.ChangeState();
         }
         

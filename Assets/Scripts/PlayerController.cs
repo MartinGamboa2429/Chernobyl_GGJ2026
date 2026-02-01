@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -7,6 +8,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float _turnSpeed = 360;
     private Vector3 _input;
     [SerializeField] private GameObject _acivationBox;
+    [SerializeField] private Interactor _interactor;
+    [SerializeField] private GameTimer _timer;
 
     private void Update() {
         GatherInput();
@@ -20,6 +23,7 @@ public class PlayerController : MonoBehaviour {
         {
             _acivationBox.SetActive(false);
         }
+        
     }
 
     private void FixedUpdate() {
@@ -41,4 +45,21 @@ public class PlayerController : MonoBehaviour {
     private void Move() {
         _rb.MovePosition(transform.position + transform.forward * _input.normalized.magnitude * _speed * Time.deltaTime);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Mask0"))
+        {
+            _interactor.ChangeSuit(0);
+        }
+        if (other.gameObject.CompareTag("Mask1"))
+        {
+            _interactor.ChangeSuit(1);
+        }
+        if (other.gameObject.CompareTag("Safezone"))
+        {
+            _timer.ReiniciarContador();
+        }
+    }
+
 }

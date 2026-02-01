@@ -10,7 +10,7 @@ public class Interactor : MonoBehaviour
     //[SerializeField] private Collider _acivationBox;
     [SerializeField] private GameObject _acivationBox;
 
-    private int _suit = 0;
+    [SerializeField] private int _suit = 0;
     
     public LayerMask _layermask;
 
@@ -55,7 +55,7 @@ public class Interactor : MonoBehaviour
                 iteractableObj.Interact(this);      
             }
         }
-
+        
     }
 
     public void ChangeSuit(int suit)
@@ -63,6 +63,7 @@ public class Interactor : MonoBehaviour
         _suit = suit;
         Debug.Log($"Traje cambiado a "+suit);
     }
+
 }
 
 // RaycastHit hit;
